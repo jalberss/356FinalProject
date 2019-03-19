@@ -5,7 +5,6 @@
 #define NUM_THREADS 10
 
 pthread_barrier_t bar;
-
 typedef struct thread_args {
   int* arg;
   void* (*f)(void*);
@@ -19,7 +18,8 @@ int main() {
   int arr[NUM_THREADS] = {1,2,3,4,5,6,7,8,9,10};
   pthread_t threads[NUM_THREADS];
   thread_arg args[NUM_THREADS];
-  pthread_barrier_init(&bar, NULL, NUM_THREADS+1);  // +1 for main thread
+
+  pthread_barrier_init(&bar, NULL, NUM_THREADS+1);
 
   for (int i = 0; i < NUM_THREADS; i++){
     args[i].arg = &arr[i];
@@ -34,20 +34,20 @@ int main() {
     pthread_create(&threads[i], NULL, &process, &args[i]);
   }
 
-  /* for (int i = 0; i < NUM_THREADS; i++){ */
-  /*   pthread_join(threads[i], NULL); */
-  /* } */
-
   pthread_barrier_wait(&bar);
-
+  pthread_barrier_wait(&bar);
   for (int i = 0; i < NUM_THREADS; i++){
     printf("%d\n", arr[i]);
   }
   return 1;
 }
 
+  
 void* process(void* arg){
   thread_arg* ta = arg;
+  ta->f(ta->arg);
+  pthread_barrier_wait(&bar);
+  sleep(2);
   ta->f(ta->arg);
   pthread_barrier_wait(&bar);
   return NULL;
