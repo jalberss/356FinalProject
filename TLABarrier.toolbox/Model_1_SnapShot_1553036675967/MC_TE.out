@@ -1,0 +1,131 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.13 of 18 July 2018
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with seed -1593029600180105458 with 4 workers on 8 cores with 1214MB heap and 2730MB offheap memory (Mac OS X 10.14.3 x86_64, Oracle Corporation 1.8.0_121 x86_64).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /Users/JAlbers/W9/Hai/Project/TLABarrier.toolbox/Model_1/MC.tla
+Parsing file /Users/JAlbers/W9/Hai/Project/TLABarrier.toolbox/Model_1/TLABarrier.tla
+Parsing file /private/var/folders/s4/7lplc7wn01j6c__5yv6c8x0h0000gn/T/AppTranslocation/5834783B-64DE-49BA-BA6F-71B8DA987AB6/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/TLC.tla
+Parsing file /private/var/folders/s4/7lplc7wn01j6c__5yv6c8x0h0000gn/T/AppTranslocation/5834783B-64DE-49BA-BA6F-71B8DA987AB6/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/Integers.tla
+Parsing file /private/var/folders/s4/7lplc7wn01j6c__5yv6c8x0h0000gn/T/AppTranslocation/5834783B-64DE-49BA-BA6F-71B8DA987AB6/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/Naturals.tla
+Parsing file /private/var/folders/s4/7lplc7wn01j6c__5yv6c8x0h0000gn/T/AppTranslocation/5834783B-64DE-49BA-BA6F-71B8DA987AB6/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/Sequences.tla
+Parsing file /private/var/folders/s4/7lplc7wn01j6c__5yv6c8x0h0000gn/T/AppTranslocation/5834783B-64DE-49BA-BA6F-71B8DA987AB6/d/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.201807180447/tla2sany/StandardModules/FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module TLABarrier
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2019-03-19 16:04:34)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2109:1 @!@!@
+Successor state is not completely specified by action AdvancePast of the next-state relation. The following variable is not assigned: BState.
+
+@!@!@ENDMSG 2109 @!@!@
+@!@!@STARTMSG 2121:1 @!@!@
+The behavior up to this point is:
+@!@!@ENDMSG 2121 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ n = 3
+/\ BState = "init"
+/\ TState = (a1 :> "pre" @@ a2 :> "pre" @@ a3 :> "pre")
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <First line 12, col 13 to line 16, col 29 of module TLABarrier>
+/\ n = 3
+/\ BState = "stop"
+/\ TState = (a1 :> "pre" @@ a2 :> "at" @@ a3 :> "pre")
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+3: <AdvanceTo line 18, col 17 to line 22, col 40 of module TLABarrier>
+/\ n = 3
+/\ BState = "stop"
+/\ TState = (a1 :> "at" @@ a2 :> "at" @@ a3 :> "pre")
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+4: <AdvanceToLast line 24, col 21 to line 30, col 37 of module TLABarrier>
+/\ n = 3
+/\ BState = "pass"
+/\ TState = (a1 :> "at" @@ a2 :> "at" @@ a3 :> "at")
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+5: <AdvancePast line 32, col 19 to line 34, col 35 of module TLABarrier>
+/\ n = 3
+/\ BState = null
+/\ TState = (a1 :> "thru" @@ a2 :> "at" @@ a3 :> "at")
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2019-03-19 16:04:35
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 14, col 16 to line 14, col 31 of module TLABarrier: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 15, col 16 to line 15, col 52 of module TLABarrier: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 16, col 27 to line 16, col 27 of module TLABarrier: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 21, col 20 to line 21, col 56 of module TLABarrier: 15
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 22, col 31 to line 22, col 31 of module TLABarrier: 15
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 22, col 33 to line 22, col 38 of module TLABarrier: 15
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 28, col 24 to line 28, col 60 of module TLABarrier: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 29, col 24 to line 29, col 39 of module TLABarrier: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 30, col 35 to line 30, col 35 of module TLABarrier: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 33, col 22 to line 33, col 60 of module TLABarrier: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 34, col 33 to line 34, col 33 of module TLABarrier: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2202:0 @!@!@
+End of statistics.
+@!@!@ENDMSG 2202 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(4) at 2019-03-19 16:04:35: 23 states generated (1,963 s/min), 9 distinct states found (768 ds/min), 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+23 states generated, 9 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 4.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 3 and the 95th percentile is 3).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 983ms at (2019-03-19 16:04:35)
+@!@!@ENDMSG 2186 @!@!@

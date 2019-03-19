@@ -10,7 +10,7 @@ Init == /\ n = num_threads
         /\ BState = "init"
 
 First(r) == /\ BState = "init"
-            /\ TState \in [threads -> {"pre"}]
+            /\ TState \in [threads -> "pre"]
             /\ BState' = "stop"
             /\ TState' = [TState EXCEPT ![r] = "at"]
             /\ UNCHANGED<<n>> 
@@ -31,26 +31,27 @@ AdvanceToLast(r) == /\ BState = "stop"
                     
 AdvancePast(r) == /\ BState = "pass"
                   /\ TState' = [TState EXCEPT ![r] = "thru"]
-                  /\ UNCHANGED<<n,BState>>
+                  /\ UNCHANGED<<n>>
                   
-Done == /\ TState \in [threads -> {"thru"}]
-        /\ UNCHANGED <<TState,BState,n>>   
-                                       
+Done == TState \in [threads -> "thru"]                  
+                
+
 TNext(r) == \/ First(r)
             \/ AdvanceTo(r)
             \/ AdvanceToLast(r)
             \/ AdvancePast(r)
             
-TypeOK == /\ TState \in [threads -> {"pre","at","thru"}]
-          /\ BState \in {"init","stop","pass"}
-          
 
 BarrierNext ==  \/ Done
                 \/ (\E t \in threads :  TNext(t))
                 
 Spec == Init /\ [][BarrierNext]_<<TState,n,BState>>            
               
+                             
+        
+  
+
 =============================================================================
 \* Modification History
-\* Last modified Tue Mar 19 16:12:18 PDT 2019 by JAlbers
-
+\* Last modified Tue Mar 19 16:02:01 PDT 2019 by JAlbers
+\* Created Tue Mar 19 13:59:26 PDT 2019 by JAlbers
